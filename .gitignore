@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# API keys and secrets
+.env
+.env.*
+!.env.example
+
+# Original insurance documents
+uploads/
+*.pdf
+
+# OCR images
+processed/
+*.png
+*.jpg
+*.jpeg
+*.tif
+*.tiff
+
+# Extracted patient data and Excel files
+exports/
+*.xlsx
+*.xls
+*.csv
+final_eob_data.json
+extracted_eobs.json
+
+# Logs
+*.log
+*.tmp
+
+# Editors
+.vscode/
+.idea/
+
+# Operating system
+.DS_Store
+Thumbs.db
