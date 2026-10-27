@@ -176,18 +176,34 @@ def show_patient_results(results):
 # PATIENT PAYMENT
 # ============================================================
 
-def patient_total_payment(results):
 
-    total = 0.0
+    payment_phrases = [
+        "total payment",
+        "total paid",
+        "total amount paid",
+        "total insurance payment",
+        "how much did the insurance company pay",
+        "how much was paid",
+        "how much money was paid",
+        "paid bill",
+        "insurance paid",
+        "total reimbursement",
+        "payment amount",
+    ]
 
-    for record in results:
+    if any(phrase in q for phrase in payment_phrases):
 
-        total += money(
-            record.get("payment")
+        total = sum(
+            money(record.get("payment"))
+            for record in records
         )
 
-    return total
+        print(
+            f"\nBot: Total payment: "
+            f"${total:,.2f}"
+        )
 
+        return
 
 # ============================================================
 # PATIENT PROCEDURES
